@@ -132,4 +132,4 @@
 
 ---
 
-*© 2024-2026 DevStudio AI. All rights reserved.*
+*© 2024-2026 DevStudio AI Inc.. All rights reserved.*
