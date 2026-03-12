@@ -254,6 +254,6 @@ VybePixie is in **active development**. The core engine and UI are functional:
 
 This repository contains documentation and architecture references only. The source code is proprietary and not publicly available.
 
-**© 2024-2026 DevynAi. All rights reserved.**
+**© 2024-2026 DevStudio AI. All rights reserved.**
 
 See [LICENSE](LICENSE) for details.
