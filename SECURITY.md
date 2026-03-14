@@ -138,6 +138,43 @@ Every operation produces a logged event:
 
 ---
 
+## Licensing Security
+
+VybePixie uses cryptographic license verification designed for offline-first environments — studios and creators don't need an internet connection to validate their license.
+
+| Control | Implementation |
+|---------|---------------|
+| **Offline verification** | License validated locally using asymmetric cryptography — no server call required |
+| **Hardware binding** | License is bound to the specific machine it was activated on |
+| **Tamper resistance** | License payload is cryptographically signed — any modification invalidates it |
+| **Trial enforcement** | 14-day trial with automatic expiry, no bypass without valid license |
+| **Tier-based gating** | Feature access enforced by tier level — graceful degradation, not hard lockout |
+| **Credential isolation** | License files stored securely, separate from project data |
+
+### Tier System
+
+| Tier | Audience | Access |
+|------|----------|--------|
+| **Trial** | Evaluators | Full features, 14-day window |
+| **Creator** | Indie devs | Full pipeline, single-seat |
+| **Studio** | Teams | Multi-seat, priority features |
+| **Enterprise** | Large studios | Custom terms, on-premise |
+
+---
+
+## Update Security
+
+VybePixie uses Tauri's native auto-updater to deliver signed binary updates:
+
+| Control | Implementation |
+|---------|---------------|
+| **Signed binaries** | Every update is cryptographically signed — unsigned code is rejected |
+| **Manifest verification** | Update manifest is verified before download begins |
+| **Atomic installation** | Updates are applied atomically — no partial or corrupted installs |
+| **Rollback safety** | Failed updates don't corrupt the existing installation |
+
+---
+
 ## Data Protection
 
 | Scope | Protection |

@@ -19,6 +19,7 @@
 - [Rendering Pipeline](#rendering-pipeline)
 - [3D Generation Pipeline](#3d-generation-pipeline)
 - [DCC Bridge System](#dcc-bridge-system)
+- [Licensing & Distribution](#licensing--distribution)
 
 ---
 
@@ -746,6 +747,67 @@ VybePixie Engine
 | **EXR** | HDR Texture | Import / Export |
 | **PNG/JPEG/WebP** | Texture | Import / Export |
 | **Point Cloud** | Raw geometry | Import |
+
+---
+
+## Licensing & Distribution
+
+VybePixie uses a tiered commercial licensing model with offline-first verification:
+
+```
+┌──────────────────────────────────────────┐
+│         Licensing Architecture            │
+├──────────────────────────────────────────┤
+│                                           │
+│  Tier System                              │
+│  ├── Trial (14-day, full features)        │
+│  ├── Creator (individual use)             │
+│  ├── Studio (team/commercial)             │
+│  └── Enterprise (custom terms)            │
+│                                           │
+│  Verification                             │
+│  ├── Offline-first — no phone-home needed │
+│  ├── Cryptographic license validation     │
+│  ├── Hardware-bound activation            │
+│  └── Automatic expiry enforcement         │
+│                                           │
+│  Feature Gating                           │
+│  ├── Tier-based feature access            │
+│  ├── Graceful degradation on expiry       │
+│  └── Settings auto-adjusted per tier      │
+│                                           │
+│  Distribution                             │
+│  ├── Tauri native auto-updater            │
+│  ├── Signed binary verification           │
+│  └── Incremental OTA updates              │
+│                                           │
+│  CLI Management                           │
+│  ├── vybepixie license activate            │
+│  ├── vybepixie license status              │
+│  └── vybepixie license hwid               │
+└──────────────────────────────────────────┘
+```
+
+### Tier Capabilities
+
+| Tier | Target | Key Capabilities |
+|------|--------|------------------|
+| **Trial** | Evaluation | Full feature access for 14 days |
+| **Creator** | Indie developers | Full generation pipeline, single-seat |
+| **Studio** | Teams | Multi-seat, priority generation, extended export options |
+| **Enterprise** | Large studios | Custom terms, dedicated support, on-premise deployment |
+
+### Update Pipeline
+
+```
+Build → Sign → Publish → Tauri Updater → User Desktop
+                                │
+                                ├── Signature verification
+                                ├── Incremental download
+                                └── Atomic install (no partial states)
+```
+
+The auto-updater uses Tauri's native plugin with signed update manifests. Updates are verified before installation — unsigned or tampered binaries are rejected.
 
 ---
 

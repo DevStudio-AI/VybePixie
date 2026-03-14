@@ -11,7 +11,8 @@
 | **Framework** | Tauri 2.9 | Lightweight native container (vs. Electron), Rust security model |
 | **Language** | Rust (2021 edition) | Memory safety, performance, zero-cost abstractions |
 | **MSRV** | 1.77.2 | Stable Rust release baseline |
-| **Plugins** | tauri-plugin-log, shell, dialog, fs | Native OS integration (v2 plugin API) |
+| **Plugins** | tauri-plugin-log, shell, dialog, fs, updater | Native OS integration + OTA updates (v2 plugin API) |
+| **Auto-Updater** | tauri-plugin-updater 2.x | Signed binary updates with atomic install |
 | **Serialization** | Serde 1.0 | Fast JSON serialization for IPC bridge |
 
 ---
@@ -209,6 +210,18 @@
 | **Canonical Form** | JSON (sorted keys, no whitespace) | Deterministic serialization |
 | **Snapshots** | SQLite checkpoints | Fast state reconstruction without full replay |
 | **API Database** | PostgreSQL | Relational data for API services |
+
+---
+
+## Licensing & Distribution
+
+| Component | Choice | Why |
+|-----------|--------|-----|
+| **License Verification** | Offline-first cryptographic validation | No phone-home required — works air-gapped |
+| **Hardware Binding** | Machine-specific activation | Prevents unauthorized license sharing |
+| **Tier System** | Trial → Creator → Studio → Enterprise | Feature gating by plan level |
+| **Auto-Updater** | Tauri native updater plugin | Signed OTA updates with atomic install |
+| **CLI Management** | Built-in license subcommands | `activate`, `status`, `hwid` for developer-friendly workflow |
 
 ---
 

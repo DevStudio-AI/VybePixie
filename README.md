@@ -48,6 +48,8 @@ The same pipeline works for standalone animation, cinematic sequences, and indiv
 - **Integrated Audio** — AI voice synthesis, AI music composition, procedural soundscapes
 - **Event-Sourced Determinism** — Same input = same output, every time. Cryptographic proof of every decision.
 - **Multi-Engine Export** — Godot 4, Unity, Unreal Engine 5, Blender as first-class export targets
+- **Commercial-Grade Licensing** — Tiered plans (Trial → Creator → Studio → Enterprise) with offline-first cryptographic verification and hardware binding
+- **Auto-Updates** — Seamless over-the-air updates via Tauri's native updater with signed binaries
 
 ---
 
@@ -362,6 +364,7 @@ VybePixie is a **Tauri hybrid desktop application** — a Rust-powered native co
 | **Properties** | Node/asset property editor |
 | **API Key Settings** | Per-provider credential management |
 | **Cost Settings** | Budget tracking and limits |
+| **License** | Tier status, activation, and hardware binding info |
 
 ---
 
@@ -376,6 +379,8 @@ VybePixie is a **Tauri hybrid desktop application** — a Rust-powered native co
 | **RBAC** | Role-based access for multi-user/studio environments |
 | **Audit trail** | Every creation, edit, and export is logged |
 | **AI governance** | Generation passes through validation before acceptance |
+| **License verification** | Offline-first cryptographic license validation with hardware binding |
+| **Signed updates** | Tauri updater delivers signed binaries — no unsigned code runs |
 
 > Full security details in [SECURITY.md](SECURITY.md)
 
@@ -399,6 +404,10 @@ VybePixie is in **active development**. Core systems are functional:
 - ✅ XR/AR/VR export (WebXR, ARKit, ARCore, Meta Quest)
 - ✅ 50+ procedural generation algorithms
 - ✅ Validation engine with auto-fix
+- ✅ Tiered licensing system (Trial → Creator → Studio → Enterprise)
+- ✅ Offline-first license verification with hardware binding
+- ✅ Over-the-air auto-updater with signed binaries
+- ✅ CLI license management (`activate`, `status`, `hwid`)
 - 🔄 Studio beta preparation
 
 ---
